@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/https://github.com/rrrubyhardd2001/goit-js-hm-09",
+    "sass": "sass src/css/main.scss src/css/index.css --no-source-map --style=compressed",
+    "build": "vite build --base=/goit-js-hm-09",
     "preview": "vite preview"
   },
   "devDependencies": {
