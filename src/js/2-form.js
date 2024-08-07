@@ -19,23 +19,30 @@ const fillForms = () => {
 fillForms();
 
 const onChangeFormField = event => {
-  let fieldValue = event.target.value;
-  let fieldName = event.target.name;
+  let fieldValue = event.target.value.trim();
+  let fieldName = event.target.name.trim();
   myDataBase[fieldName] = fieldValue;
+
   localStorage.setItem('feedBackFormState', JSON.stringify(myDataBase));
 };
 
 const onSubmitForm = event => {
-  const email = myDataBase.email.trim();
-  const message = myDataBase.message.trim();
   event.preventDefault();
-  event.target.reset();
+
+  const email = myDataBase.email;
+  const message = myDataBase.message;
+
   localStorage.removeItem('feedBackFormState');
   if (email === '' || message === '') {
     alert('Fill please all fields');
     return;
   }
+  console.log(myDataBase);
+
+  event.target.reset();
+
+  myDataBase = { email: '', message: '' };
 };
 
-feedBackFormState.addEventListener('change', onChangeFormField);
 feedBackFormState.addEventListener('submit', onSubmitForm);
+feedBackFormState.addEventListener('input', onChangeFormField);

@@ -1,3 +1,8 @@
+// Описаний в документації
+import SimpleLightbox from 'simplelightbox';
+// Додатковий імпорт стилів
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 document.addEventListener('DOMContentLoaded', () => {
   const lightbox = new SimpleLightbox('.gallery a', {
     captions: true,
@@ -91,11 +96,3 @@ const createImages = image => {
 // додавання розмітки
 const imagesCarcass = images.map(imageName => createImages(imageName)).join('');
 galleryFold.innerHTML = imagesCarcass;
-
-// блокування завантаження
-const linkGallery = document.querySelectorAll('.gallery-link');
-const onGalleryLink = e => {
-  e.preventDefault();
-  // console.log("you can not download it");
-};
-linkGallery.forEach(link => link.addEventListener('click', onGalleryLink));
