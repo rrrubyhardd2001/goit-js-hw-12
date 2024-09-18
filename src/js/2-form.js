@@ -1,11 +1,10 @@
 const feedBackFormState = document.querySelector('.feedback-form');
-let myDataBase = {
-  email: '',
-  message: '',
-};
+let myDataBase = {};
 
 const fillForms = () => {
-  const formDataFields = JSON.parse(localStorage.getItem('feedBackFormState'));
+  const formDataFields = JSON.parse(
+    localStorage.getItem('feedback-form-state')
+  );
   if (formDataFields === null) {
     return;
   }
@@ -19,20 +18,20 @@ const fillForms = () => {
 fillForms();
 
 const onChangeFormField = event => {
-  let fieldValue = event.target.value.trim();
   let fieldName = event.target.name.trim();
+  let fieldValue = event.target.value.trim();
+
   myDataBase[fieldName] = fieldValue;
 
-  localStorage.setItem('feedBackFormState', JSON.stringify(myDataBase));
+  localStorage.setItem('feedback-form-state', JSON.stringify(myDataBase));
 };
 
 const onSubmitForm = event => {
   event.preventDefault();
 
-  const email = myDataBase.email;
-  const message = myDataBase.message;
+  // const email = myDataBase.email;
+  // const message = myDataBase.message;
 
-  localStorage.removeItem('feedBackFormState');
   if (email === '' || message === '') {
     alert('Fill please all fields');
     return;
@@ -40,8 +39,8 @@ const onSubmitForm = event => {
   console.log(myDataBase);
 
   event.target.reset();
-
-  myDataBase = { email: '', message: '' };
+  localStorage.removeItem('feedback-form-state');
+  myDataBase = {};
 };
 
 feedBackFormState.addEventListener('submit', onSubmitForm);
