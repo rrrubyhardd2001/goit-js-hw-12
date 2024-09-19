@@ -29,9 +29,6 @@ const onChangeFormField = event => {
 const onSubmitForm = event => {
   event.preventDefault();
 
-  // const email = myDataBase.email;
-  // const message = myDataBase.message;
-
   if (email === '' || message === '') {
     alert('Fill please all fields');
     return;
