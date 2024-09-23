@@ -1,5 +1,8 @@
 const feedBackFormState = document.querySelector('.feedback-form');
-let myDataBase = {};
+let myDataBase = {
+  email: '',
+  message: '',
+};
 
 const fillForms = () => {
   const formDataFields = JSON.parse(
@@ -29,7 +32,7 @@ const onChangeFormField = event => {
 const onSubmitForm = event => {
   event.preventDefault();
 
-  if (email === '' || message === '') {
+  if (myDataBase.email === '' || myDataBase.message === '') {
     alert('Fill please all fields');
     return;
   }
