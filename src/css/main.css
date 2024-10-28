@@ -1,0 +1,119 @@
+@import url('izitoast/dist/css/iziToast.min.css');
+@import url('simplelightbox/dist/simple-lightbox.min.css');
+
+.form-js-search {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.inpPix {
+  padding: 8px 118px 8px 16px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  border-radius: 5px;
+  border: 2px solid #808080;
+  outline: none;
+}
+.inpPix:hover {
+  border-color: #000000;
+}
+.inpPix:focus {
+  border-color: #4e75ff;
+}
+.btnForPhotos {
+  border-radius: 5px;
+  height: 45px;
+  width: 91px;
+  margin-left: 5px;
+  background-color: #4e75ff;
+  color: #ffffff;
+  padding: auto;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  border: none;
+  cursor: pointer;
+}
+.btnForPhotos:hover {
+  background-color: #6c8cff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* loader */
+
+.loader {
+  font-size: 48px;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 2px;
+  position: relative;
+  left: 40%;
+  top: 50%;
+}
+.loader::after {
+  content: 'Loading';
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  color: #ff3d00;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  animation: animloader 10s ease-in infinite;
+}
+
+@keyframes animloader {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.is-hidden {
+  display: none;
+}
+/* rendering */
+
+.lFitem,
+.wrapItem {
+  list-style-type: none;
+}
+.list-foto {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.list-foto img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.wrapWrap {
+  max-width: 245px;
+}
+.wrapFoto {
+  display: flex;
+  width: 220px;
+}
+.wrapList {
+  padding: 5px 20px 10px 0;
+}
+.wrapItem {
+  font-size: 12px;
+  font-weight: 600;
+}
+.wrapQty {
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+}

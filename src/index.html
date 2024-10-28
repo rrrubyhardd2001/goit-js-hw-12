@@ -2,23 +2,27 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HomeWork # 9</title>
-  <link rel="stylesheet" href="./css/index.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Document</title>
 </head>
 
 <body>
-  <h1>Hello GOIT </h1>
 
-  <nav>
-    <ul>
-      <li><a href="./1-gallery.html">Gallery</a></li>
-      <li><a href="./2-form.html">Feedback Form</a></li>
-    </ul>
-  </nav>
+    <div class="wrapSearch">
+        <form action="" class="form-js-search">
+            <input type="text" class="input-js" placeholder="Search images...">
+            <button class="btnForPhotos-js" name="userQ" type="submit">Search</button>
+        </form>
 
+        <ul class="list-foto"></ul>
+        <div><span class="loader js-loader is-hidden">Loading</span></div>
+    </div>
+
+
+    <script type="module" src="./main.js"></script>
 </body>
+
 
 </html>
