@@ -16,10 +16,3 @@ export const searchPhoto = queryPhoto => {
     return response.json();
   });
 };
-
-// inpt.addEventListener('input', e => {
-//   const query = e.target.value;
-//   if (query.trim() !== '') {
-//     searchPhoto(query);
-//   }
-// });
