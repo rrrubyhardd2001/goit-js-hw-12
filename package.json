@@ -5,11 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-<<<<<<< HEAD
-    "build": "vite build --base=/vanilla-app-template/",
-=======
     "build": "vite build --base=/goit-js-hw-11/",
->>>>>>> 867961bbe73fb88929afa1fd90d3d7c41ebd12d6
     "preview": "vite preview"
   },
   "devDependencies": {
