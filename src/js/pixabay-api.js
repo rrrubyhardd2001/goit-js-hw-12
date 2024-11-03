@@ -1,7 +1,7 @@
 import axios from 'axios';
 axios.defaults.baseURL = 'https://pixabay.com/api/';
 
-export const searchPhoto = (queryPhoto, page) => {
+export const searchPhoto = (queryPhoto, page, per_page) => {
   const userParams = {
     params: {
       key: '45750277-faa37f2a8b8a1a1eac0cf2e32',
@@ -9,7 +9,7 @@ export const searchPhoto = (queryPhoto, page) => {
       page: page,
       image_type: 'photo',
       orientation: 'horizontal',
-      per_page: 15,
+      per_page: 'per_page',
       safesearch: 'true',
     },
   };
