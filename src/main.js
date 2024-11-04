@@ -13,8 +13,7 @@ const showLoader = () => (loaderJs.style.display = 'inline-block');
 const hideLoader = () => (loaderJs.style.display = 'none');
 let currPage = 1;
 let searchValue = '';
-const per_page = 15;
-
+const per_page = 20;
 const lightbox = new SimpleLightbox('.list-foto a', {
   captionData: 'alt',
   captionDelay: 250,
@@ -82,18 +81,22 @@ const onLoadmore = async () => {
 
     smthscroll();
     lightbox.refresh();
-    if ((currPage * per_page) / data.totalHits) {
+    if (currPage * per_page >= data.totalHits) {
       btnLoadMore.classList.add('is-hidden');
       iziToast.error({
         message: "We're sorry, but you've reached the end of search results.",
         position: 'topRight',
       });
+      hideLoader();
+    } else {
+      btnLoadMore.classList.remove('is-hidden');
     }
   } catch (error) {
     iziToast.error({
       message: "We're sorry, something wrong.",
       position: 'topLeft',
     });
+    hideLoader();
     console.log(error);
   } finally {
     hideLoader();
